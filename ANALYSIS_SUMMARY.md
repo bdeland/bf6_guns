@@ -1,3 +1,8 @@
+---
+layout: default
+title: Detailed Analysis Report
+---
+
 # Weapons Data Analysis Summary Report
 
 ## Dataset Overview

@@ -1,3 +1,8 @@
+---
+layout: default
+title: Battlefield 6 Weapon Statistics
+---
+
 # 🎯 Battlefield 6 Weapon Statistics Analysis
 
 An interactive web dashboard and Python data analysis project examining weapon performance metrics across 31 firearms from 4 weapon classes (LMGs, ARs, SMGs, and Carbines). This project provides comprehensive insights into time-to-kill, accuracy, damage falloff, and overall weapon effectiveness across various engagement distances.
