@@ -62,7 +62,7 @@ The dashboard is **fully functional and ready to deploy**! Features include:
 
 ### Try It Now
 - **Local**: Simply open `index.html` in any modern web browser
-- **Online**: Deploy to GitHub Pages in ~5 minutes (see `GITHUB_PAGES_SETUP.md`)
+- **Online**: Already live at https://bdeland.github.io/bf6_guns/
 - **No Server Required**: Uses embedded data for instant loading
 
 ## 📁 Repository Structure
@@ -82,13 +82,7 @@ bf6_guns/
 │
 ├── 📚 Documentation
 │   ├── README.md               # This file
-│   ├── ANALYSIS_SUMMARY.md     # Detailed statistical findings
-│   ├── PROJECT_STATUS.md       # Current project status
-│   ├── GITHUB_PAGES_SETUP.md   # 5-minute deployment guide
-│   ├── QUICK_START.md          # Quick start guide
-│   ├── SETUP_GUIDE.md          # Complete setup instructions
-│   ├── UPLOAD_CHECKLIST.md     # Pre-deployment checklist
-│   └── GITHUB_DESCRIPTION.txt  # Repository description
+│   └── ANALYSIS_SUMMARY.md     # Detailed statistical findings
 │
 └── 📜 Project Files
     ├── requirements.txt        # Python dependencies
@@ -163,7 +157,7 @@ This creates `analysis_output/` folder with 9 PNG visualizations.
 
 #### Quick Start
 1. **Local**: Double-click `index.html` - works immediately!
-2. **Online**: Deploy to GitHub Pages in 5 minutes (see `GITHUB_PAGES_SETUP.md`)
+2. **Online**: Already live at https://bdeland.github.io/bf6_guns/
 
 #### Dashboard Tabs Guide
 - **📊 Overview**: Browse all weapons with real-time filtering by class, search by name, and sort by any metric
@@ -328,7 +322,7 @@ Please feel free to:
 | ✅ | Mobile Responsive | **Yes** |
 | ✅ | No Server Required | **Yes** |
 
-**Quick Deploy:** Follow `GITHUB_PAGES_SETUP.md` to go live in ~5 minutes!
+**Live Now:** https://bdeland.github.io/bf6_guns/
 
 ## 📝 License
 
@@ -351,10 +345,8 @@ For questions, suggestions, or discussions:
 ## 🔗 Quick Links
 
 - 📖 [Detailed Analysis Report](ANALYSIS_SUMMARY.md)
-- 🚀 [GitHub Pages Setup Guide](GITHUB_PAGES_SETUP.md)
-- ⚡ [Quick Start Guide](QUICK_START.md)
-- ✅ [Upload Checklist](UPLOAD_CHECKLIST.md)
-- 📋 [Project Status](PROJECT_STATUS.md)
+- 🌐 [Live Dashboard](https://bdeland.github.io/bf6_guns/)
+- 💻 [View Source on GitHub](https://github.com/bdeland/bf6_guns)
 
 ---
 
@@ -374,8 +366,6 @@ For questions, suggestions, or discussions:
 ---
 
 ### 🌟 Star this repository if you find it useful!
-
-**Ready to deploy?** → See `GITHUB_PAGES_SETUP.md`
 
 ---
 
