@@ -1,0 +1,34 @@
+GitHub Repository Description (use this as your repo description):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 Interactive weapon statistics dashboard + Python analysis for 31 weapons across 4 classes. Features TTK calculator, weapon comparison, dynamic charts, and comprehensive performance metrics.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Topics to add (GitHub tags):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+data-analysis
+data-science
+python
+pandas
+matplotlib
+seaborn
+statistics
+weapons
+gaming
+visualization
+analytics
+data-visualization
+javascript
+interactive-dashboard
+web-application
+chartjs
+github-pages
+weapon-stats
+ttk-calculator
+scipy
+numpy
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapon Statistics Analysis - Interactive Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="data.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎯 Weapon Statistics Analysis</h1>
+            <p class="subtitle">Interactive dashboard for analyzing 31 weapons across 4 classes</p>
+            <div class="header-stats">
+                <div class="stat-card">
+                    <span class="stat-number" id="totalWeapons">31</span>
+                    <span class="stat-label">Total Weapons</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Weapon Classes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="filteredCount">31</span>
+                    <span class="stat-label">Filtered Results</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="overview">📊 Overview</button>
+            <button class="tab" data-tab="comparison">⚔️ Weapon Comparison</button>
+            <button class="tab" data-tab="charts">📈 Interactive Charts</button>
+            <button class="tab" data-tab="leaderboards">🏆 Leaderboards</button>
+            <button class="tab" data-tab="calculator">🧮 TTK Calculator</button>
+        </nav>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <h3>🔍 Filters</h3>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="classFilter">Weapon Class:</label>
+                    <select id="classFilter" class="filter-select">
+                        <option value="all">All Classes</option>
+                        <option value="LMG">LMG</option>
+                        <option value="AR">AR</option>
+                        <option value="SMG">SMG</option>
+                        <option value="CRB">CRB</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="searchInput">Search Weapon:</label>
+                    <input type="text" id="searchInput" class="filter-input" placeholder="Type weapon name...">
+                </div>
+
+                <div class="filter-group">
+                    <label for="sortBy">Sort By:</label>
+                    <select id="sortBy" class="filter-select">
+                        <option value="name">Name (A-Z)</option>
+                        <option value="ttk20">TTK at 20m (Best)</option>
+                        <option value="power20">20m Power Score (Best)</option>
+                        <option value="rpm">RPM (Highest)</option>
+                        <option value="accuracy">Accuracy (Best)</option>
+                        <option value="velocity">Velocity (Fastest)</option>
+                    </select>
+                </div>
+
+                <button id="resetFilters" class="btn-reset">Reset All</button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content active" data-content="overview">
+            <div class="overview-grid">
+                <div class="card">
+                    <h3>🎯 Top Performers</h3>
+                    <div id="topPerformers"></div>
+                </div>
+                
+                <div class="card">
+                    <h3>📊 Class Distribution</h3>
+                    <canvas id="classChart"></canvas>
+                </div>
+                
+                <div class="card full-width">
+                    <h3>🔫 Weapon Data Table</h3>
+                    <div class="table-container">
+                        <table id="weaponTable">
+                            <thead>
+                                <tr>
+                                    <th class="sortable" data-sort="weapon">Weapon <span class="sort-arrow"></span></th>
+                                    <th class="sortable" data-sort="class">Class <span class="sort-arrow"></span></th>
+                                    <th class="sortable" data-sort="rpm">RPM <span class="sort-arrow"></span></th>
+                                    <th class="sortable" data-sort="ttk0">TTK 0m <span class="sort-arrow"></span></th>
+                                    <th class="sortable" data-sort="ttk20">TTK 20m <span class="sort-arrow"></span></th>
+                                    <th class="sortable" data-sort="power20">20m Power <span class="sort-arrow"></span></th>
+                                    <th class="sortable" data-sort="accuracy">Accuracy <span class="sort-arrow"></span></th>
+                                    <th class="sortable" data-sort="velocity">Velocity <span class="sort-arrow"></span></th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="weaponTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" data-content="comparison">
+            <div class="comparison-section">
+                <h3>⚔️ Compare Weapons Side-by-Side</h3>
+                <p class="help-text">Select up to 4 weapons to compare their stats</p>
+                
+                <div class="weapon-selectors">
+                    <div class="selector-group">
+                        <label>Weapon 1:</label>
+                        <select class="weapon-select" id="compare1">
+                            <option value="">Select weapon...</option>
+                        </select>
+                    </div>
+                    <div class="selector-group">
+                        <label>Weapon 2:</label>
+                        <select class="weapon-select" id="compare2">
+                            <option value="">Select weapon...</option>
+                        </select>
+                    </div>
+                    <div class="selector-group">
+                        <label>Weapon 3:</label>
+                        <select class="weapon-select" id="compare3">
+                            <option value="">Select weapon...</option>
+                        </select>
+                    </div>
+                    <div class="selector-group">
+                        <label>Weapon 4:</label>
+                        <select class="weapon-select" id="compare4">
+                            <option value="">Select weapon...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="comparisonResults"></div>
+                <canvas id="comparisonChart" style="max-height: 400px;"></canvas>
+            </div>
+        </div>
+
+        <div class="tab-content" data-content="charts">
+            <div class="charts-section">
+                <h3>📈 Interactive Visualizations</h3>
+                
+                <div class="chart-selector">
+                    <label for="chartType">Select Chart Type:</label>
+                    <select id="chartType" class="filter-select">
+                        <option value="ttk">Time to Kill Comparison</option>
+                        <option value="rpm-ttk">RPM vs TTK Scatter</option>
+                        <option value="accuracy">Accuracy Comparison</option>
+                        <option value="velocity">Projectile Velocity</option>
+                        <option value="damage-falloff">Damage Falloff</option>
+                        <option value="power-scores">Power Scores</option>
+                    </select>
+                </div>
+
+                <div class="card">
+                    <canvas id="mainChart"></canvas>
+                </div>
+
+                <div class="chart-legend" id="chartLegend"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" data-content="leaderboards">
+            <div class="leaderboards-section">
+                <h3>🏆 Leaderboards</h3>
+                
+                <div class="leaderboard-grid">
+                    <div class="leaderboard-card">
+                        <h4>⚡ Fastest TTK at 0m</h4>
+                        <ol id="leaderboard-ttk0"></ol>
+                    </div>
+                    
+                    <div class="leaderboard-card">
+                        <h4>🎯 Best 20m Power Score</h4>
+                        <ol id="leaderboard-power20"></ol>
+                    </div>
+                    
+                    <div class="leaderboard-card">
+                        <h4>🔥 Highest RPM</h4>
+                        <ol id="leaderboard-rpm"></ol>
+                    </div>
+                    
+                    <div class="leaderboard-card">
+                        <h4>🎪 Best Accuracy</h4>
+                        <ol id="leaderboard-accuracy"></ol>
+                    </div>
+                    
+                    <div class="leaderboard-card">
+                        <h4>🚀 Fastest Velocity</h4>
+                        <ol id="leaderboard-velocity"></ol>
+                    </div>
+                    
+                    <div class="leaderboard-card">
+                        <h4>💀 Highest Lethality</h4>
+                        <ol id="leaderboard-lethality"></ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" data-content="calculator">
+            <div class="calculator-section">
+                <h3>🧮 TTK Calculator & Weapon Finder</h3>
+                
+                <div class="calculator-grid">
+                    <div class="card">
+                        <h4>Find Best Weapon for Your Needs</h4>
+                        
+                        <div class="calc-input-group">
+                            <label>Primary Engagement Distance:</label>
+                            <select id="calcDistance" class="filter-select">
+                                <option value="0">0m - Close Quarter</option>
+                                <option value="20" selected>20m - Short Range</option>
+                                <option value="35">35m - Medium Range</option>
+                                <option value="75">75m - Long Range</option>
+                            </select>
+                        </div>
+
+                        <div class="calc-input-group">
+                            <label>Priority Stat:</label>
+                            <select id="calcPriority" class="filter-select">
+                                <option value="ttk">Fastest Kill Time</option>
+                                <option value="accuracy">Best Accuracy</option>
+                                <option value="rpm">Highest Fire Rate</option>
+                                <option value="velocity">Fastest Projectile</option>
+                                <option value="balanced">Balanced Performance</option>
+                            </select>
+                        </div>
+
+                        <div class="calc-input-group">
+                            <label>Preferred Class:</label>
+                            <select id="calcClass" class="filter-select">
+                                <option value="all">Any Class</option>
+                                <option value="LMG">LMG</option>
+                                <option value="AR">AR</option>
+                                <option value="SMG">SMG</option>
+                                <option value="CRB">CRB</option>
+                            </select>
+                        </div>
+
+                        <button id="calcFind" class="btn-primary">Find Best Weapon</button>
+                    </div>
+
+                    <div class="card">
+                        <h4>Recommended Weapons</h4>
+                        <div id="calcResults">
+                            <p class="help-text">Select your preferences and click "Find Best Weapon"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>📊 Weapon Statistics Analysis Dashboard | Data updated 2024</p>
+            <p>
+                <a href="https://github.com/yourusername/weapon-statistics-analysis" target="_blank">View on GitHub</a> |
+                <a href="ANALYSIS_SUMMARY.md" target="_blank">Detailed Report</a> |
+                <a href="SETUP_GUIDE.md" target="_blank">Setup Guide</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
