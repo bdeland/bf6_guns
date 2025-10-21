@@ -1,3 +1,10 @@
+// Configuration
+const DATA_CONFIG = {
+    lastUpdated: '2024-10-21',  // Update this date when source data changes (YYYY-MM-DD)
+    sourceUrl: 'https://docs.google.com/spreadsheets/d/1nfde_76i6hi45UG_YrD9F-o3QjxZXYCE2q_kEkCEYig/edit?usp=sharing',
+    sourceAuthor: 'u/Mastahamma'
+};
+
 // Global variables
 let weaponsData = [];
 let filteredData = [];
@@ -102,8 +109,31 @@ function parseCSVLine(line) {
     return result;
 }
 
+// Update footer with data info
+function updateFooterInfo() {
+    const dataUpdateInfo = document.getElementById('dataUpdateInfo');
+    const dataSourceAuthor = document.getElementById('dataSourceAuthor');
+    
+    if (dataUpdateInfo) {
+        // Format the date nicely
+        const date = new Date(DATA_CONFIG.lastUpdated);
+        const formattedDate = date.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'short', 
+            day: 'numeric' 
+        });
+        dataUpdateInfo.textContent = `Data updated ${formattedDate}`;
+    }
+    
+    if (dataSourceAuthor) {
+        dataSourceAuthor.href = 'https://www.reddit.com/user/Mastahamma/';
+        dataSourceAuthor.title = `View source: ${DATA_CONFIG.sourceUrl}`;
+    }
+}
+
 // Initialize app
 function initializeApp() {
+    updateFooterInfo();
     setupTabs();
     setupFilters();
     setupTable();
