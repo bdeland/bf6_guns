@@ -615,7 +615,11 @@ function renderScatterChart(ctx, data) {
         data: {
             datasets: Object.keys(classGroups).map(weaponClass => ({
                 label: weaponClass,
-                data: classGroups[weaponClass].map(w => ({ x: w.rpm, y: w.ttk20 })),
+                data: classGroups[weaponClass].map(w => ({ 
+                    x: w.rpm, 
+                    y: w.ttk20,
+                    weapon: w.weapon  // Add weapon name to data point
+                })),
                 backgroundColor: getClassColor(weaponClass),
                 pointRadius: 6,
                 pointHoverRadius: 8
@@ -629,7 +633,20 @@ function renderScatterChart(ctx, data) {
                     text: 'RPM vs TTK at 20m',
                     font: { size: 16, weight: 'bold' }
                 },
-                legend: { position: 'bottom' }
+                legend: { position: 'bottom' },
+                tooltip: {
+                    callbacks: {
+                        title: function(context) {
+                            return context[0].raw.weapon || '';
+                        },
+                        label: function(context) {
+                            return [
+                                `RPM: ${context.parsed.x}`,
+                                `TTK: ${context.parsed.y}ms`
+                            ];
+                        }
+                    }
+                }
             },
             scales: {
                 x: { title: { display: true, text: 'RPM (Rounds Per Minute)' } },
