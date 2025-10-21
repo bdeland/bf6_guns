@@ -17,7 +17,7 @@ Make your dashboard live on the internet for free!
 1. **Create a GitHub repository**
 2. **Upload all files** (or push via Git)
 3. **Enable GitHub Pages** in repository settings
-4. **Share your link:** `https://yourusername.github.io/your-repo-name/`
+4. **Share your link:** `https://bdeland.github.io/bf6_guns/`
 
 📖 **See `GITHUB_PAGES_SETUP.md` for detailed step-by-step instructions.**
 

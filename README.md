@@ -49,7 +49,7 @@ The project includes:
 
 ## 🌐 Interactive Web Dashboard
 
-**[🚀 View Live Demo](https://bdeland.github.io/bf6_guns/)** _(Replace `yourusername` with your GitHub username)_
+**[🚀 View Live Demo →](https://bdeland.github.io/bf6_guns/)**
 
 The dashboard is **fully functional and ready to deploy**! Features include:
 
@@ -128,7 +128,7 @@ Install via: `pip install -r requirements.txt`
 ### Option 1: Use the Web Dashboard (Recommended)
 1. Clone or download this repository:
 ```bash
-git clone https://github.com/yourusername/bf6_guns.git
+git clone https://github.com/bdeland/bf6_guns.git
 cd bf6_guns
 ```
 
@@ -159,7 +159,7 @@ This creates `analysis_output/` folder with 9 PNG visualizations.
 
 ### 🌐 Web Dashboard (Recommended)
 
-**[View Live Demo →](https://yourusername.github.io/bf6_guns/)** _(Update with your GitHub username)_
+**[🌐 View Live Demo →](https://bdeland.github.io/bf6_guns/)**
 
 #### Quick Start
 1. **Local**: Double-click `index.html` - works immediately!
@@ -344,7 +344,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📧 Contact & Support
 
 For questions, suggestions, or discussions:
-- **Issues**: [Open an issue](https://github.com/yourusername/bf6_guns/issues) on GitHub
+- **Issues**: [Open an issue](https://github.com/bdeland/bf6_guns/issues) on GitHub
 - **Contributions**: Submit a pull request
 - **Discussions**: Use GitHub Discussions for general questions
 

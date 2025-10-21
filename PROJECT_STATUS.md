@@ -25,7 +25,7 @@ A fully functional, interactive web dashboard with:
 1. **Create GitHub repository** (public)
 2. **Upload all files** from `C:\Users\delan\Desktop\guns`
 3. **Enable GitHub Pages** in Settings → Pages
-4. **Visit your live site** at `https://yourusername.github.io/repo-name`
+4. **Visit your live site** at `https://bdeland.github.io/bf6_guns/`
 
 📖 **Detailed guide:** See `GITHUB_PAGES_SETUP.md`
 

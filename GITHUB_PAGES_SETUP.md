@@ -14,7 +14,7 @@ This guide will walk you through deploying the interactive weapon statistics das
 
 1. Go to [GitHub](https://github.com) and sign in
 2. Click the **"+"** icon in the top right and select **"New repository"**
-3. Name your repository (e.g., `weapon-statistics-analysis`)
+3. Name your repository (e.g., `bf6_guns`)
 4. Choose **Public** (required for free GitHub Pages)
 5. **Do NOT** initialize with README (we already have one)
 6. Click **"Create repository"**
@@ -35,8 +35,8 @@ git add .
 git commit -m "Initial commit: Interactive weapon statistics dashboard"
 
 # Add your GitHub repository as remote
-# Replace 'yourusername' with your actual GitHub username
-git remote add origin https://github.com/yourusername/weapon-statistics-analysis.git
+# Example for your repository:
+git remote add origin https://github.com/bdeland/bf6_guns.git
 
 # Push to GitHub
 git push -u origin main
@@ -63,10 +63,10 @@ git push -u origin main
 
 Your dashboard will be available at:
 ```
-https://yourusername.github.io/weapon-statistics-analysis/
+https://bdeland.github.io/bf6_guns/
 ```
 
-Replace `yourusername` with your actual GitHub username!
+Update the username and repository name for your own project!
 
 ## ✅ Verify Deployment
 
@@ -110,7 +110,7 @@ git push
 
 **Solution:**
 1. Double-check Settings → Pages is configured
-2. Verify the URL matches: `https://yourusername.github.io/repo-name/`
+2. Verify the URL matches: `https://bdeland.github.io/bf6_guns/`
 3. Wait a few minutes - initial deployment can take time
 
 ## 🔄 Updating Your Dashboard
@@ -168,7 +168,7 @@ Want a custom domain like `weapons.yourname.com`?
 1. Buy a domain from any registrar (Namecheap, Google Domains, etc.)
 2. In your repository, create a file named `CNAME` (no extension)
 3. Add your domain to the file: `weapons.yourname.com`
-4. In your DNS settings, add a CNAME record pointing to `yourusername.github.io`
+4. In your DNS settings, add a CNAME record pointing to `bdeland.github.io`
 5. Wait for DNS propagation (can take 24-48 hours)
 
 More details: [GitHub Pages Custom Domain Docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
@@ -179,7 +179,7 @@ You can embed your dashboard in other websites using an iframe:
 
 ```html
 <iframe 
-    src="https://yourusername.github.io/weapon-statistics-analysis/" 
+    src="https://bdeland.github.io/bf6_guns/" 
     width="100%" 
     height="800px" 
     frameborder="0">
@@ -221,7 +221,7 @@ Update your README.md with the live link:
 ```markdown
 ## 🌐 Live Demo
 
-**[View Interactive Dashboard](https://yourusername.github.io/weapon-statistics-analysis/)**
+**[View Interactive Dashboard](https://bdeland.github.io/bf6_guns/)**
 ```
 
 Share on:
@@ -254,5 +254,5 @@ Share on:
 
 **Congratulations!** 🎉 Your interactive weapon statistics dashboard is now live!
 
-Share your URL: `https://yourusername.github.io/weapon-statistics-analysis/`
+Share your URL: `https://bdeland.github.io/bf6_guns/`
 

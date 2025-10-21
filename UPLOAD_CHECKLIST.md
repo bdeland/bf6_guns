@@ -37,7 +37,7 @@ Use this checklist to ensure you have everything ready for uploading to GitHub!
 - [ ] Test sorting - click column headers in table
 
 ### 2. Update Personalization
-- [ ] Update `README.md` - Replace "yourusername" with your GitHub username
+- [x] Update `README.md` - Using actual GitHub username (bdeland)
 - [ ] Update `index.html` footer links (lines 255-258) with your info
 - [ ] Add your name to `LICENSE` file (line 3)
 
@@ -52,7 +52,7 @@ Use this checklist to ensure you have everything ready for uploading to GitHub!
 ```bash
 # On GitHub.com:
 1. Click "+" icon → "New repository"
-2. Name: weapon-statistics-analysis (or your choice)
+2. Name: bf6_guns
 3. Public repository
 4. Do NOT initialize with README
 5. Click "Create repository"
@@ -66,7 +66,7 @@ cd C:\Users\delan\Desktop\guns
 git init
 git add .
 git commit -m "Initial commit: Interactive weapon statistics dashboard"
-git remote add origin https://github.com/YOURUSERNAME/weapon-statistics-analysis.git
+git remote add origin https://github.com/bdeland/bf6_guns.git
 git push -u origin main
 ```
 
@@ -94,7 +94,7 @@ git push -u origin main
 3. Source: main branch, / (root)
 4. Click "Save"
 5. Wait 2-3 minutes
-6. Visit: https://YOURUSERNAME.github.io/weapon-statistics-analysis/
+6. Visit: https://bdeland.github.io/bf6_guns/
 ```
 
 ### Step 4: Add Description & Tags
@@ -174,8 +174,8 @@ git push -u origin main
 
 Once everything is checked off:
 
-1. **Your repository URL:** `https://github.com/YOURUSERNAME/weapon-statistics-analysis`
-2. **Your live dashboard:** `https://YOURUSERNAME.github.io/weapon-statistics-analysis/`
+1. **Your repository URL:** `https://github.com/bdeland/bf6_guns`
+2. **Your live dashboard:** `https://bdeland.github.io/bf6_guns/`
 3. **Share it:** Tell everyone about your awesome data visualization project!
 
 ---

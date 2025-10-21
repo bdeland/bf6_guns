@@ -14,8 +14,8 @@ Get the weapon statistics analysis running in 5 minutes!
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/weapon-statistics-analysis.git
-cd weapon-statistics-analysis
+git clone https://github.com/bdeland/bf6_guns.git
+cd bf6_guns
 
 # Install dependencies
 pip install -r requirements.txt
@@ -29,8 +29,8 @@ python analyze_weapons.py
 #### Windows
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/weapon-statistics-analysis.git
-cd weapon-statistics-analysis
+git clone https://github.com/bdeland/bf6_guns.git
+cd bf6_guns
 
 # Create virtual environment
 python -m venv venv
@@ -48,8 +48,8 @@ python analyze_weapons.py
 #### macOS/Linux
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/weapon-statistics-analysis.git
-cd weapon-statistics-analysis
+git clone https://github.com/bdeland/bf6_guns.git
+cd bf6_guns
 
 # Create virtual environment
 python3 -m venv venv
