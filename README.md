@@ -270,6 +270,8 @@ The Python script generates 9 publication-quality charts at 300 DPI:
 
 ## 📊 Dataset Information
 
+**Data Source:** Original analysis by [u/Mastahamma](https://www.reddit.com/user/Mastahamma/) - [View Source Spreadsheet](https://docs.google.com/spreadsheets/d/1nfde_76i6hi45UG_YrD9F-o3QjxZXYCE2q_kEkCEYig/edit?usp=sharing)
+
 The dataset includes **31 weapons** across **4 classes** with **22 metrics per weapon**:
 
 | Metric Category | Details |
@@ -284,6 +286,8 @@ The dataset includes **31 weapons** across **4 classes** with **22 metrics per w
 | **Lethality** | Practical lethality coefficient |
 
 **Data Format:** CSV file with complete weapon statistics, embedded in `data.js` for web dashboard
+
+**Original Source:** [BF6 Gun Analysis by Avora (Google Sheets)](https://docs.google.com/spreadsheets/d/1nfde_76i6hi45UG_YrD9F-o3QjxZXYCE2q_kEkCEYig/edit?usp=sharing) by u/Mastahamma
 
 ## 🎨 Technology Stack
 
@@ -335,10 +339,10 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Weapon data collected through extensive in-game testing and analysis
+- **Data Collection**: All weapon statistics collected and analyzed by [u/Mastahamma](https://www.reddit.com/user/Mastahamma/) - [Original Google Spreadsheet](https://docs.google.com/spreadsheets/d/1nfde_76i6hi45UG_YrD9F-o3QjxZXYCE2q_kEkCEYig/edit?usp=sharing)
+- **Interactive Dashboard**: Built with Chart.js for beautiful interactive visualizations
+- **Statistical Analysis**: Powered by Python's data science ecosystem (pandas, matplotlib, seaborn, scipy)
 - Inspired by the gaming community's need for objective weapon performance comparisons
-- Built with Chart.js for beautiful interactive visualizations
-- Statistical analysis powered by Python's data science ecosystem
 
 ## 📧 Contact & Support
 
